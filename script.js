@@ -15,4 +15,5 @@ function submitAddress() {
       .then(data => {
           document.getElementById('output').textContent = JSON.stringify(data, null, 2);
       });
+  document.getElementById('URL').textContent = apiUrl;
 }
