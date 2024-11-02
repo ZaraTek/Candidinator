@@ -1,7 +1,7 @@
 function submitAddress() {
     const address = '1600 Amphitheatre Parkway, Mountain View, CA';
     document.getElementById("output").innerText = `Address: ${address}`;
-    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+    const apiKey = 'AIzaSyD0qRr-E6tFTvDbiPrJpcbgsUxcM250wyA'; // Replace with your actual API key
     const url = `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${encodeURIComponent(address)}&key=${apiKey}`;
     
     fetch(url)
