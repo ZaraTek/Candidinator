@@ -5,16 +5,28 @@
 </head>
 <body>
 
-<h1>Candidinator</h1>
-<p>Please enter your address for information about your local candidates!</p>
-
 <h2>Address Input</h2>
 <form id="addressForm">
-    <label for="address">Adress:</label>
-    <input type="text" id="address" address="address"><br><br>
     
-    <label for="address">API-Key:</label>
-    <input type="text" id="key"><br><br>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br><br>
+    
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
+    
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" required><br><br>
+    
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required><br><br>
+    
+    <label for="zipCode">Zip Code:</label>
+    <input type="text" id="zipCode" name="zipCode" required><br><br>
+    <label for="apiKey">API Key:</label>
+    <input type="text" id="apiKey" name="apiKey" required>
+    <br><br>
+    <button type="button" onclick="submitAddress()">Run Function</button>
+
 </form>
 
 
