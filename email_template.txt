@@ -1,0 +1,53 @@
+Dear [candidate_name],
+
+I am a citizen of [location---potentially from address] who will be voting in the upcoming election. I had a few questions about your
+stances and proposed policies on the following issues:
+
+[depending on what the user selects from a checklist?]
+
+1. Healthcare
+What policies do you have in mind to make healthcare accessible and affordable? What is your stance on Medicare and Medicaid? Do you
+have any proposals for funding mental health services?
+
+2. Education
+What are your plans for funding public schools and supporting teachers? Where do you stand on school choice and charter schools? Do you
+have any proposals to address the rising costs of higher education and student loan debt?
+
+3. Economy and Jobs
+What is your stance on minimum wage policies? Do you have plans to support job creation and local small businesses? How do you plan 
+to protect workers' rights and improve labor conditions?
+
+4. Environment and Climate Change
+What initiatives do you support to promote sustainability and green energy? How would you address carbon emissions and pollution?
+What are your plans to conserve natural resources and protect public lands?
+
+5. Gun Control and Public Safety
+What are your views on gun permits and background check policies? How do you plan to address community safety, including police reform?
+What measures would you support to prevent crime and improve the justice system?
+
+6. Immigration
+What reforms do you support regarding immigration policies and border security? How would you assist immigrants within our community?
+What is your stance on issues affecting undocumented individuals and programs like DACA?
+
+7. Civil Rights and Social Justice
+What are your thoughts on protecting voting rights and ensuring election security?
+How would you work to advance LGBTQ+ rights and other protections? What is your approach to criminal justice reform and addressing 
+racial equity?
+
+8. Reproductive Rights
+What is your position on access to abortion and other reproductive health services? How would you address policies regarding birth control and family planning? What steps would you take to improve maternal healthcare and promote healthcare equity?
+
+9. Housing and Homelessness
+What are your plans for making housing more affordable? How would you address homelessness in our community? Do you support rent control measures or enhanced tenant rights?
+
+10. Technology and Privacy
+What policies do you propose to protect data privacy and cybersecurity? How do you view the regulation of social media and major tech companies? What are your plans to improve internet access and digital infrastructure?
+
+11. Infrastructure
+How would you prioritize funding for roads, public transportation, and other infrastructure needs? What plans do you have for investing in water, sewer, and energy systems? How would you prepare for and respond to natural disasters?
+
+12. Foreign Policy and Defense
+What is your stance on international relations, including our nation’s alliances? What approach do you support regarding military spending and veterans' services? How would you address nuclear and cybersecurity threats?
+
+Sincerely,
+[your name]
