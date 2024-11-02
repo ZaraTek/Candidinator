@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Page Title</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+body {
+    padding: 10px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.address-form {
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+</style>
+
 </head>
 <body>
 
-<h2>Address Input</h2>
-<form id="addressForm">
-    
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address" required><br><br>
-    
+<form id="addressForm" class="address-form">
+    <div class="input-container">
+        <label for="address">ADDRESS</label>
+        <input type="text" id="address" name="address" value="463 Emerson Rd" required>
+        <br>
+    </div>
+
     <label for="city">City:</label>
-    <input type="text" id="city" name="city" required><br><br>
+    <input type="text" id="city" name="city" value="Carmel" required><br><br>
     
     <label for="state">State:</label>
-    <input type="text" id="state" name="state" required><br><br>
-    
-    <label for="country">Country:</label>
-    <input type="text" id="country" name="country" required><br><br>
+    <input type="text" id="state" name="state" value="IN" required><br><br>
     
     <label for="zipCode">Zip Code:</label>
-    <input type="text" id="zipCode" name="zipCode" required><br><br>
+    <input type="text" id="zipCode" name="zipCode" value="46032" required><br><br>
+
     <label for="apiKey">API Key:</label>
     <input type="text" id="apiKey" name="apiKey" required>
     <br><br>
+
     <button type="button" onclick="submitAddress()">Run Function</button>
 
 </form>
 
 <p id="URL"></p>
+<p id="ParsedData"></p>
 <p id="output"></p>
 <script src="script.js"></script>
 
