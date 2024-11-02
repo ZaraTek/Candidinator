@@ -1,21 +1,18 @@
-function submitAddress() {
-    const address = '1600 Amphitheatre Parkway, Mountain View, CA';
-    document.getElementById("output").innerText = `Address: ${address}`;
-    const apiKey = 'API KEY'; // Replace with your actual API key
-    const url = `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${encodeURIComponent(address)}&key=${apiKey}`;
-    
-    fetch(url)
-    .then(response => {
-        if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data); // Process the JSON data here
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-    });
 
+function submitAddress() {
+  const address = document.getElementById("address").value;
+  const city = document.getElementById("city").value;
+  const state = document.getElementById("state").value;
+  const country = document.getElementById("country").value;
+  const zipCode = document.getElementById("zipCode").value;
+
+  const combinedAddress = `${address}, ${city}, ${state}, ${zipCode}, ${country}`;
+  var apiKey = document.getElementById('apiKey').value;
+  var apiUrl = "https://www.googleapis.com/civicinfo/v2/voterinfo?address=" + encodeURIComponent(combinedAddress) + "&key=" + apiKey;
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+      });
 }
