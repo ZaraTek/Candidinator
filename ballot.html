@@ -6,14 +6,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
 <style>
 body {
     padding: 10px;
     font-family: 'Poppins', Arial, sans-serif;
     display: flex;
     justify-content: center;
+    background-color: rgba(169, 116, 255, 0.133);
 }
 .ballot-container {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     width:100%;
@@ -27,20 +32,35 @@ body {
 .address-form {
     display: flex;
     flex-direction: column;
-    border: solid 1px rgba(0,0,0,0.5);
+    /* border: solid 1px rgba(0,0,0,0.5); */
     border-radius: 20px;
     padding: 10px;
     gap:10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgba(117, 86, 255, 0.133);
 }
 button {
     height:40px;
     border-radius: 10px;
+    border: none;
+    background-color: #9c71ff;
+    color: white;
+    font-weight: 800px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
 }
 button:hover {
-    background:#0003;
+    background: #684bad;
 }
 input {
     height:30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding-left: 8px;
+    font-family: 'Poppins', Arial, sans-serif;
+    min-width: none;
 }
 label {
     font-size: 10px;
@@ -49,12 +69,13 @@ label {
     margin-left: 5px;
 }
 .ballot {
-    display: flex;
     flex-direction: column;
-    border: solid 1px rgba(0,0,0,0.5);
     border-radius: 20px;
     padding: 10px;
     gap:10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgba(117, 86, 255, 0.133);
+    display: flex;
 }
 .dropdown-inner-container {
     display: flex;
@@ -87,199 +108,302 @@ label {
     font-size: 12px;
 }
 .input-container {
-            display: flex;
-            flex-direction: column;
-        }
-        .address-form {
-            border: solid 1px black;
-            border-radius: 5px;
-            padding: 10px;
-        }
-        .modal {
-            display: none;
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4); 
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            }
+    display: flex;
+    flex-direction: column;
+}
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 30px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
 
-            .close:hover,
-            .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-            }
+    .close:hover,
+    .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    }
 
-        .closeOtherModal {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            width:20px;
-            height:100px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            }
+.closeOtherModal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: none;
+    border: none;
+    position: fixed;
+    right: max(calc((100vw - 500px)/2 - 10px), 30px);
+    box-shadow: none;
+}
 
-            .close:hover,
-            .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-            }
+.closeOtherModal:hover, .closeOtherModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+}
 
-        .headerText {
-            width: 472px;
-            height: 91px;
-            flex-shrink: 0;
-            position: fixed;
+.headerText {
+    width: 472px;
+    height: 91px;
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: #000;
+    font-family: 'Jacques Francois', 'serif';
+    font-weight: 100;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: .7;
+    
+}
+.headerBox {
+    width: 100%;
+    height: 70px;
+    flex-shrink: 0;
+    position: fixed;
+    top:0;
+    left: 0;
+    background: #99bdff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+}
+.modal-wrapper, .ai-content-wrapper {
+    color:#000;
+    width: 80%; 
+    max-width: 500px;        
+    height: 400px;          
+    padding: 20px;
+    margin: 0;     
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;    
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    gap: 10px;
+}
+.button-wrapper {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    margin-top: 10px;  
+    width:200px;       
+    border-radius: 20px;
+    height:40px;
+    margin: 0 auto; 
+}
+.email-generator, .ai-modal{
+    position:fixed;
+    width:100vw;
+    height:calc(100vh + 20px);
+    background: #0002;
+    flex-direction: column;
+    justify-content:center;
+    top:-20px;
+    gap:10px;
+    align-items: center;
+}
+#email-generator, #ai-modal {
+    display:none;
+}
+#ai-modal {
+    z-index: 1;
+}
+.position-button {
+    background: none;
+    border: 3px solid #9c71ff;
+    color: black;
+    font-weight: 400;
+}
+.position-button:focus, .position-button:hover {
+    background-color: #9c71ff;
+}
+.editable-input {
+    border: 1px solid black;
+}
+.policy-button {
+    background: none;
+    border: 3px solid #9c71ff;
+    color: black;
+    font-weight: 400; 
+}
+.policy-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.candidate-image {
+    object-fit: cover;
+}
+.flag {
+    padding: 7px;
+}
+.horizontal-inputs{
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+.horizontal-input{
+    width: 100px;
+    flex: 1;
+}
+.custom-issue {
+    border-color: #9c71ff;
+    background-image: linear-gradient(to bottom right,#40049a, #b07fe9);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.add-email-button {
+    display: none;
+}
 
-            color: #000;
-            font-family: 'Jacques Francois', serif;
-            font-weight: 100;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-        .headerBox {
-            width: 1580px;
-            height: 77px;
-            flex-shrink: 0;
-            position: fixed;
-            top:0;
-            left: 0;
 
-            background: #E1F6FF;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-        .content-wrapper {
-            width: 80%; 
-            max-width: 500px;        
-            height: 400px;          
-            padding: 20px;
-            margin: 0 auto;     
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            overflow-y: auto;    
-            border-radius: 30px;
-            border: 1px solid #000;
-            background: #FFF;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-        .button-wrapper {
-            display: flex;
-            justify-content: center;  
-            align-items: center;
-            margin-top: 10px;  
-            width:200px;       
-            border-radius: 20px;
-
-            background: #FFF;
-            height:40px;
-            margin: 0 auto; 
-        }
-        .email-generator{
-            position:fixed;
-            width:100vw;
-            height:calc(100vh + 20px);
-            background: #0002;
-            flex-direction: column;
-            justify-content:center;
-            top:-20px;
-            gap:10px;
-        }
-        #email-generator {
-            display:flex;
-        }
 </style>
 
 </head>
 <body>
+    <div class="headerBox">
+        <div class="headerText">
+            <h1>LocalVoice</h1>
+        </div>
+        <img class="flag" src="flag_transparent.png">
+    </div>
 <div class="ballot-container">
+    
+    <h2 style="margin: 0;">Enter your address:</h2>
 <form id="addressForm" class="address-form">
     <div class="input-container">
         <label for="address">ADDRESS</label>
         <input type="text" id="address" name="address" value="463 Emerson Rd" required>
     </div>
 
-    <div class="input-container">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" value="Carmel" required>
-    </div>
-
-    <div class="input-container">
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" value="IN" required>
+    <div class="horizontal-inputs">
+        <div class="input-container horizontal-input">
+            <label for="city">CITY</label>
+            <input type="text" id="city" name="city" value="Carmel" required>
+        </div>
+    
+        <div class="input-container horizontal-input">
+            <label for="state">STATE</label>
+            <input type="text" id="state" name="state" value="IN" required>
+        </div>
+        
+        <div class="input-container horizontal-input">
+            <label for="zipCode">ZIP CODE</label>
+            <input type="text" id="zipCode" name="zipCode" value="46032" required>
+        </div>
     </div>
     
     <div class="input-container">
-        <label for="zipCode">Zip Code:</label>
-        <input type="text" id="zipCode" name="zipCode" value="46032" required>
-    </div>
-
-    <div class="input-container">
-        <label for="apiKey">API Key:</label>
+        <label for="apiKey">API KEY</label>
         <input type="text" id="apiKey" name="apiKey" value="AIzaSyD0qRr-E6tFTvDbiPrJpcbgsUxcM250wyA" required>
     </div> 
 
-    <button type="button" onclick="submitAddress()">Run Function</button>
+    <button type="button" onclick="submitAddress()">Display Candidates</button>
 
 </form>
 
 <div class="ballot" id="ballot">
-    
+    <p style="font-weight: bold; margin:0;">What is LocalVoice?</p>
+    <p style="margin:0;">LocalVoice allows citizens to enter their address to find local election candidates, providing basic candidate information (e.g., party affiliation, website, and photo). It offers an email template generator where voters can select key social and political issues to ask about, enabling informed voting. Additionally, voters can enter a specific issue they want to address, which will be integrated into the email template.
+    </p>
 </div>
 
 </div>
+
+<div class="ai-modal" id="ai-modal">
+    <div class="ai-content-wrapper">
+        <button class="closeOtherModal" onclick="closeAIModal()">&times;</button>
+        <div style="display: flex; flex-direction: column;">
+            <label for="custom-issue">CUSTOM ISSUE</label>
+            <input type="text" id="custom-issue" name="custom-issue" style="border: 1px solid">
+        </div>
+        <button id="generate-ai-button" class="custom-issue" onclick="generateAI()">Generate with AI
+            <svg width="18" height="16" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 4C5.82843 3.17157 6 2 6 2C6 2 6.17157 3.17157 7 4C7.82843 4.82843 9 5 9 5C9 5 7.82843 5.17157 7 6C6.17157 6.82843 6 8 6 8C6 8 5.82843 6.82843 5 6C4.17157 5.17157 3 5 3 5C3 5 4.17157 4.82843 5 4Z" fill="white"/>
+                <path d="M3.66667 0.666667C3.94281 0.390524 4 0 4 0C4 0 4.05719 0.390524 4.33333 0.666667C4.60948 0.942809 5 1 5 1C5 1 4.60948 1.05719 4.33333 1.33333C4.05719 1.60948 4 2 4 2C4 2 3.94281 1.60948 3.66667 1.33333C3.39052 1.05719 3 1 3 1C3 1 3.39052 0.942809 3.66667 0.666667Z" fill="white"/>
+                <path d="M1.33333 2.33333C1.88562 1.78105 2 1 2 1C2 1 2.11438 1.78105 2.66667 2.33333C3.21895 2.88562 4 3 4 3C4 3 3.21895 3.11438 2.66667 3.66667C2.11438 4.21895 2 5 2 5C2 5 1.88562 4.21895 1.33333 3.66667C0.781049 3.11438 0 3 0 3C0 3 0.781049 2.88562 1.33333 2.33333Z" fill="white"/>
+            </svg>
+        </button>
+        <span id="ai-text"></span>
+        <button class="add-email-button" onclick="addToEmail()">Add to Email</button>
+    </div>
+</div>
+
 <div class="email-generator" id="email-generator">
-<div class="content-wrapper">
+<div class="modal-wrapper">
     <button class="closeOtherModal" onclick="closeModal()">&times;</button>
+<div class="content-wrapper">
     <div class="introduction">
-        Dear <input type="text" id="candidate" class="editable-input" placeholder="Candidate's Name">,
+        Dear <span type="text" id="candidate"></span>,
     </div>
     <div class="body">
-        I am a citizen of <input type="text" id="location" class="editable-input" placeholder="Location"> who will be voting in the upcoming election. I had a few questions about your stances and proposed policies on the following issues:
+        <br>
+        I am a citizen of <span type="text" id="location"></span> who will be voting in the upcoming election. I had a few questions about your stances and proposed policies on the following issues:
         <button type="button" id="addPolicy">Add Policy</button>
         <div id="policyModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Select a policy to add to your email</p>
-                <button class="policy-button" data-policy="Healthcare">Healthcare</button>
-                <button class="policy-button" data-policy="Education">Education</button>
-                <button class="policy-button" data-policy="Economy and Jobs">Economy and Jobs</button>
-                <button class="policy-button" data-policy="Environment and Climate Change">Environment and Climate Change</button>
-                <button class="policy-button" data-policy="Gun Control and Public Safety">Gun Control and Public Safety</button>
-                <button class="policy-button" data-policy="Immigration">Immigration</button>
-                <button class="policy-button" data-policy="Civil Rights and Social Justice">Civil Rights and Social Justice</button>
-                <button class="policy-button" data-policy="Reproductive Rights">Reproductive Rights</button>
-                <button class="policy-button" data-policy="Housing and Homelessness">Housing and Homelessness</button>
-                <button class="policy-button" data-policy="Technology and Privacy">Technology and Privacy</button>
-                <button class="policy-button" data-policy="Infrastructure">Infrastructure</button>
-                <button class="policy-button" data-policy="Foreign Policy and Defense">Foreign Policy and Defense</button>
-
+                <p>Select a policy to add to your email:</p>
+                <div class="policy-buttons">
+                    <button class="policy-button" data-policy="Healthcare">Healthcare</button>
+                    <button class="policy-button" data-policy="Education">Education</button>
+                    <button class="policy-button" data-policy="Economy and Jobs">Economy and Jobs</button>
+                    <button class="policy-button" data-policy="Environment and Climate Change">Environment and Climate Change</button>
+                    <button class="policy-button" data-policy="Gun Control and Public Safety">Gun Control and Public Safety</button>
+                    <button class="policy-button" data-policy="Immigration">Immigration</button>
+                    <button class="policy-button" data-policy="Civil Rights and Social Justice">Civil Rights and Social Justice</button>
+                    <button class="policy-button" data-policy="Reproductive Rights">Reproductive Rights</button>
+                    <button class="policy-button" data-policy="Housing and Homelessness">Housing and Homelessness</button>
+                    <button class="policy-button" data-policy="Technology and Privacy">Technology and Privacy</button>
+                    <button class="policy-button" data-policy="Infrastructure">Infrastructure</button>
+                    <button class="policy-button" data-policy="Foreign Policy and Defense">Foreign Policy and Defense</button>
+                    <button class="policy-button custom-issue" data-policy="Custom Issue">Custom Issue
+                        <svg width="18" height="16" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 4C5.82843 3.17157 6 2 6 2C6 2 6.17157 3.17157 7 4C7.82843 4.82843 9 5 9 5C9 5 7.82843 5.17157 7 6C6.17157 6.82843 6 8 6 8C6 8 5.82843 6.82843 5 6C4.17157 5.17157 3 5 3 5C3 5 4.17157 4.82843 5 4Z" fill="white"/>
+                            <path d="M3.66667 0.666667C3.94281 0.390524 4 0 4 0C4 0 4.05719 0.390524 4.33333 0.666667C4.60948 0.942809 5 1 5 1C5 1 4.60948 1.05719 4.33333 1.33333C4.05719 1.60948 4 2 4 2C4 2 3.94281 1.60948 3.66667 1.33333C3.39052 1.05719 3 1 3 1C3 1 3.39052 0.942809 3.66667 0.666667Z" fill="white"/>
+                            <path d="M1.33333 2.33333C1.88562 1.78105 2 1 2 1C2 1 2.11438 1.78105 2.66667 2.33333C3.21895 2.88562 4 3 4 3C4 3 3.21895 3.11438 2.66667 3.66667C2.11438 4.21895 2 5 2 5C2 5 1.88562 4.21895 1.33333 3.66667C0.781049 3.11438 0 3 0 3C0 3 0.781049 2.88562 1.33333 2.33333Z" fill="white"/>
+                        </svg>
+                        </button>
+                </div>
             </div>
+        </div>
+        <div id="policies">
+
         </div>
     </div>
     </p>
@@ -290,9 +414,9 @@ label {
             <input type="text" id="your_name" class="editable-input" placeholder="Your Name" name="your_name"><br><br>
     </div>
 </div>
-<!-- <div > -->
+</div>
     <button class="button-wrapper" type="button" onclick="copyToClipBoard()">Copy to Clipboard</button>
-<!-- </div> -->
+    <button class="button-wrapper" type="button" onclick="clearPolicies()">Clear</button>
 </div>
 
 <script src="script.js"></script>
