@@ -1,6 +1,6 @@
-# Local Elections Matter
+# LocalVoice
 
-Local Elections Matter allows citizens to enter their address to find local election candidates, providing basic candidate information (e.g., party affiliation, website, and photo). It offers an email template generator where voters can select key social and political issues to ask about, enabling informed voting. Additionally, voters can enter a specific issue they want to address, which will be integrated into the email template.
+LocalVoice allows citizens to enter their address to find local election candidates, providing basic candidate information (e.g., party affiliation, website, and photo). It offers an email template generator where voters can select key social and political issues to ask about, enabling informed voting. Additionally, voters can enter a specific issue they want to address, which will be integrated into the email template.
 
 ## Table of Contents
 - [Usage](#usage)
@@ -36,5 +36,4 @@ As we don't currently have a server, our site is hosted on our GitHub repository
   - Email: mjferna3@ncsu.edu
 - **Zara Tekmen**
 - **Kyle Hoffman**  
-  - Discord: kywle  
   - Email: kyhoffman@davidson.edu
