@@ -1,8 +1,11 @@
 var city = '';
 var state = '';
+var google_API_key = 'AIzaSyD0qRr-E6tFTvDbiPrJpcbgsUxcM250wyA'
+var openAI_API_key = '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'
 
-function loadCandidateImage(candidateName, imgElement, apiKey) {
-  const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=657690a897580469f&q=${encodeURIComponent(candidateName)}&searchType=image`;
+
+function loadCandidateImage(candidateName, imgElement, google_API_key) {
+  const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${google_API_key}&cx=657690a897580469f&q=${encodeURIComponent(candidateName)}&searchType=image`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -47,10 +50,9 @@ function submitAddress() {
   city = document.getElementById('city').value;
   state = document.getElementById('state').value;
   const zipCode = document.getElementById('zipCode').value;
-  const apiKey = document.getElementById('apiKey').value;
 
   const combinedAddress = `${address}, ${city}, ${state}, ${zipCode}, United States`;
-  const apiUrl = `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${encodeURIComponent(combinedAddress)}&key=${apiKey}`;
+  const apiUrl = `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${encodeURIComponent(combinedAddress)}&key=${google_API_key}`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -117,7 +119,7 @@ function submitAddress() {
               img.setAttribute('alt', 'candidate-image');
 
               // Load the actual candidate image from the API
-              loadCandidateImage(candidate.name, img, apiKey);
+              loadCandidateImage(candidate.name, img, google_API_key);
 
               const candidateInfo = document.createElement('div');
               candidateInfo.classList.add('candidate-info');
@@ -295,14 +297,12 @@ async function generateAI() {
   const aiButton = document.getElementById("generate-ai-button");
   aiButton.innerHTML = "Loading...";
 
-  const apiKey = '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'; // Replace this with your OpenAI API Key
-
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
+        'Authorization': `Bearer ${openAI_API_key}`
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
