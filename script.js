@@ -1,7 +1,7 @@
 var city = '';
 var state = '';
-var google_API_key = 'AIzaSyD0qRr-E6tFTvDbiPrJpcbgsUxcM250wyA'
-var openAI_API_key = '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'
+var google_API_key = 'YOUR-API-KEY';
+var openAI_API_key = 'OPENAI-API-KEY';
 
 
 function loadCandidateImage(candidateName, imgElement, google_API_key) {
