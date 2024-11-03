@@ -32,16 +32,23 @@ function submitAddress() {
           var span = document.createElement('span');
           span.textContent = office;
 
-          var svg = document.createElement('svg');
+          var svg = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'svg'
+          );
           svg.setAttribute('width', '10');
           svg.setAttribute('height', '10');
           svg.setAttribute('viewBox', '0 0 10 10');
-          svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-          var path = document.createElement('path');
+
+          var path = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'path'
+          );
           path.setAttribute('d', 'M1 3 L5 7 L9 3');
           path.setAttribute('stroke', 'black');
           path.setAttribute('stroke-width', '1.5');
           path.setAttribute('fill', 'none');
+
           svg.appendChild(path);
 
           dropdownInnerContainer.appendChild(span);
@@ -123,5 +130,4 @@ function submitAddress() {
         resultsContainer.textContent = 'No contests found for this address.';
       }
     });
-  document.getElementById('URL').textContent = apiUrl;
 }
