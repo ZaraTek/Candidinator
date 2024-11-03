@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+    <title>Email Generator</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .address-form {
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+        .headerText {
+            width: 472px;
+            height: 91px;
+            flex-shrink: 0;
+            position: fixed;
+
+            color: #000;
+            font-family: 'Jacques Francois', serif;
+            font-weight: 100;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .headerBox {
+            width: 1580px;
+            height: 77px;
+            flex-shrink: 0;
+            position: fixed;
+            top:0;
+            left: 0;
+
+            background: #E1F6FF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+        .content-wrapper {
+            width: 500px;         
+            height: 400px;          
+            padding: 20px;
+            margin: 0 auto;     
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow-y: auto;    
+            border-radius: 30px;
+            border: 1px solid #000;
+            background: #FFF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+        }
+        .button-wrapper {
+            display: flex;
+            justify-content: center;  
+            margin-top: 10px;         
+            border-radius: 20px;
+            background: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="headerBox">
+        <div class="headerText">
+            <h1>Local Elections Matter</h1>
+        </div>
+    </div>
+
+    
+    
+    <h2>Email Generator</h2>
+
+    <div class="content-wrapper">
+        <div class="introduction">
+            Dear <input type="text" id="candidate" class="editable-input" placeholder="Candidate's Name">,
+        </div>
+        <div class="body">
+            I am a citizen of <input type="text" id="location" class="editable-input" placeholder="Location"> who will be voting in the upcoming election. I had a few questions about your stances and proposed policies on the following issues:
+            <button type="button" id="addPolicy">Add Policy</button>
+            <div id="policyModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Select a policy to add to your email</p>
+                    <button class="policy-button" data-policy="Healthcare">Healthcare</button>
+                    <button class="policy-button" data-policy="Education">Education</button>
+                    <button class="policy-button" data-policy="Economy and Jobs">Economy and Jobs</button>
+                    <button class="policy-button" data-policy="Environment and Climate Change">Environment and Climate Change</button>
+                    <button class="policy-button" data-policy="Gun Control and Public Safety">Gun Control and Public Safety</button>
+                    <button class="policy-button" data-policy="Immigration">Immigration</button>
+                    <button class="policy-button" data-policy="Civil Rights and Social Justice">Civil Rights and Social Justice</button>
+                    <button class="policy-button" data-policy="Reproductive Rights">Reproductive Rights</button>
+                    <button class="policy-button" data-policy="Housing and Homelessness">Housing and Homelessness</button>
+                    <button class="policy-button" data-policy="Technology and Privacy">Technology and Privacy</button>
+                    <button class="policy-button" data-policy="Infrastructure">Infrastructure</button>
+                    <button class="policy-button" data-policy="Foreign Policy and Defense">Foreign Policy and Defense</button>
+
+                </div>
+            </div>
+        </div>
+        </p>
+        <div class="conclusion">
+            Thank you for your time.
+            <br><br>
+            Sincerely,<br>
+                <input type="text" id="your_name" class="editable-input" placeholder="Your Name" name="your_name"><br><br>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <button type="button" onclick="copyToClipBoard()">Copy to Clipboard</button>
+    </div>
+    <script src="email.js"></script>
+</body>
+</html>
