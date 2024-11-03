@@ -10,7 +10,10 @@ LocalVoice allows citizens to enter their address to find local election candida
 
 ## Usage
 
-As we don't currently have a server, our site is hosted on our GitHub repository at [Local Elections Matter](https://github.com/ZaraTek/Candidinator).
+As we don't currently have a server, our site is hosted on our GitHub repository at [LocalVoice](https://github.com/ZaraTek/Candidinator).
+In script.js there are 2 global variables for a Google API Key as well as an OpenAI key. Follow the instructions for each in the provided links and enter your API keys.
+Google Civic Info API: https://developers.google.com/civic-information
+OpenAI API: https://platform.openai.com/docs/overview
 
 ## Features
 
