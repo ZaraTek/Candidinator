@@ -9,50 +9,124 @@
 <style>
 body {
     padding: 10px;
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.ballot-container {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 500px;
+    gap:20px
 }
 .input-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .address-form {
-    border: solid 1px black;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgba(0,0,0,0.5);
+    border-radius: 20px;
     padding: 10px;
+    gap:10px;
 }
-
+button {
+    height:40px;
+    border-radius: 10px;
+}
+button:hover {
+    background:#0003;
+}
+input {
+    height:30px;
+}
+label {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    margin-left: 5px;
+}
+.ballot {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    padding: 10px;
+    gap:10px;
+}
+.dropdown-inner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.candidate-card {
+    border: solid 1px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.candidate-container {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+.candidate-info {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.candidate-details {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
 </style>
 
 </head>
 <body>
-
+<div class="ballot-container">
 <form id="addressForm" class="address-form">
     <div class="input-container">
         <label for="address">ADDRESS</label>
         <input type="text" id="address" name="address" value="463 Emerson Rd" required>
-        <br>
     </div>
 
-    <label for="city">City:</label>
-    <input type="text" id="city" name="city" value="Carmel" required><br><br>
-    
-    <label for="state">State:</label>
-    <input type="text" id="state" name="state" value="IN" required><br><br>
-    
-    <label for="zipCode">Zip Code:</label>
-    <input type="text" id="zipCode" name="zipCode" value="46032" required><br><br>
+    <div class="input-container">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="Carmel" required>
+    </div>
 
-    <label for="apiKey">API Key:</label>
-    <input type="text" id="apiKey" name="apiKey" required>
-    <br><br>
+    <div class="input-container">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" value="IN" required>
+    </div>
+    
+    <div class="input-container">
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" value="46032" required>
+    </div>
+
+    <div class="input-container">
+        <label for="apiKey">API Key:</label>
+        <input type="text" id="apiKey" name="apiKey" value="AIzaSyD0qRr-E6tFTvDbiPrJpcbgsUxcM250wyA" required>
+    </div> 
 
     <button type="button" onclick="submitAddress()">Run Function</button>
 
 </form>
 
-<p id="URL"></p>
-<p id="ParsedData"></p>
-<p id="output"></p>
-<script src="script.js"></script>
+<div class="ballot" id="ballot">
+    
+</div>
+
+</div>
+<script src="ballot.js"></script>
 
 </body>
 </html>
